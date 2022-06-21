@@ -1,0 +1,992 @@
+{
+  "version": "3.2",
+  "log": [
+    {
+      "Ownable": {
+        "src": "@openzeppelin\\contracts\\access\\Ownable.sol:20",
+        "inherit": [
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "@openzeppelin\\contracts\\access\\Ownable.sol:28"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "ReentrancyGuard": {
+        "src": "@openzeppelin\\contracts\\security\\ReentrancyGuard.sol:22",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ReentrancyGuard",
+            "src": "@openzeppelin\\contracts\\security\\ReentrancyGuard.sol:39"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_status",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "ReentrancyGuard",
+              "src": "@openzeppelin\\contracts\\security\\ReentrancyGuard.sol:37"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "ERC20": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:35",
+        "version": {
+          "withMetadata": "f291fe966822e5cb35ee93279328a215cd1e06ac529759d786706a551b6648aa",
+          "withoutMetadata": "dcd1184b2607aade9ce1f3d68b5d254f272bf6d19e2e27300f6195d76b6e288a",
+          "linkedWithoutMetadata": "dcd1184b2607aade9ce1f3d68b5d254f272bf6d19e2e27300f6195d76b6e288a"
+        },
+        "inherit": [
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:54"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:36"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:38"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:40"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:42"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:43"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "IERC20": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "ERC20Burnable": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\extensions\\ERC20Burnable.sol:14",
+        "inherit": [
+          "ERC20",
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "burn(uint256)",
+          "burnFrom(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:36"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:38"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:40"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:42"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:43"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "IERC20Metadata": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\extensions\\IERC20Metadata.sol:13",
+        "inherit": [
+          "IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "name()",
+          "symbol()",
+          "decimals()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "SafeERC20": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\utils\\SafeERC20.sol:18",
+        "version": {
+          "withMetadata": "0bf51f004e43b4cc529bc427cd7157a1d3a5930da21c9c7669756e30440615bb",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [
+          "Address"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "Address": {
+        "src": "@openzeppelin\\contracts\\utils\\Address.sol:9",
+        "version": {
+          "withMetadata": "081757686dc351d82fb9f378f14f01f644df1e2c3f629bcf42a75bff5e896faf",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin\\contracts\\utils\\Address.sol:191"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "Context": {
+        "src": "@openzeppelin\\contracts\\utils\\Context.sol:16",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "SafeMath": {
+        "src": "@openzeppelin\\contracts\\utils\\math\\SafeMath.sol:16",
+        "version": {
+          "withMetadata": "eb0ce2f306cf33bdc67fb6d6d25bbd62c8fbf4ef894d66f9206fc142108595dd",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "Lyst": {
+        "src": "contracts\\Lyst.sol:18",
+        "version": {
+          "withMetadata": "f97a0b8e69a9c9c2d525fe33f259eb4ef2631c0d6dac8a5e63d08770fc1f2ffa",
+          "withoutMetadata": "d5eca2b12db8e3dfdaf00e47a73ab98a02c56f9d7572bad62d54706a35684c0d",
+          "linkedWithoutMetadata": "d5eca2b12db8e3dfdaf00e47a73ab98a02c56f9d7572bad62d54706a35684c0d"
+        },
+        "inherit": [
+          "Operator",
+          "Ownable",
+          "ERC20Burnable",
+          "ERC20",
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [
+          "SafeMath"
+        ],
+        "methods": [
+          "()",
+          "distributeReward(address)",
+          "burn(uint256)",
+          "governanceRecoverUnsupported(address,uint256,address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Lyst",
+            "src": "contracts\\Lyst.sol:27"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "rewardPoolDistributed",
+            "src": "contracts\\Lyst.sol:25"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:36"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:38"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:40"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:42"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:43"
+            },
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "_operator",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_address",
+              "contract": "Operator",
+              "src": "contracts\\owner\\Operator.sol:9"
+            },
+            {
+              "label": "rewardPoolDistributed",
+              "offset": 20,
+              "slot": "6",
+              "type": "t_bool",
+              "contract": "Lyst",
+              "src": "contracts\\Lyst.sol:25"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "Cata": {
+        "src": "contracts\\cata.sol:20",
+        "version": {
+          "withMetadata": "764f76bab34e6fd7b861697324fafd114753798f8b1ce1fe6d4120abc3b7ae27",
+          "withoutMetadata": "22789ad2106b3a19e1ddb90e180c9667087d25441e91f4d1c9ec40bf87e71f2e",
+          "linkedWithoutMetadata": "22789ad2106b3a19e1ddb90e180c9667087d25441e91f4d1c9ec40bf87e71f2e"
+        },
+        "inherit": [
+          "Operator",
+          "Ownable",
+          "ERC20Burnable",
+          "ERC20",
+          "IERC20Metadata",
+          "IERC20",
+          "Context"
+        ],
+        "libraries": [
+          "SafeMath8",
+          "SafeMath"
+        ],
+        "methods": [
+          "()",
+          "setCataOracle(address)",
+          "mint(address,uint256)",
+          "burn(uint256)",
+          "burnFrom(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "distributeReward(address,address)",
+          "governanceRecoverUnsupported(address,uint256,address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Cata",
+            "src": "contracts\\cata.sol:42"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "rewardPoolDistributed",
+            "src": "contracts\\cata.sol:33"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:36"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:38"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:40"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:42"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol:43"
+            },
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "_operator",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_address",
+              "contract": "Operator",
+              "src": "contracts\\owner\\Operator.sol:9"
+            },
+            {
+              "label": "rewardPoolDistributed",
+              "offset": 20,
+              "slot": "6",
+              "type": "t_bool",
+              "contract": "Cata",
+              "src": "contracts\\cata.sol:33"
+            },
+            {
+              "label": "cataOracle",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_address",
+              "contract": "Cata",
+              "src": "contracts\\cata.sol:37"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "IOracle": {
+        "src": "contracts\\interfaces\\IOracle.sol:5",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "update()",
+          "consult(address,uint256)",
+          "twap(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "SafeMath8": {
+        "src": "contracts\\libraries\\SafeMath8.sol:18",
+        "version": {
+          "withMetadata": "90d8c544e6f76f0a9aa2d0bc9dda07800e34944c8bda64ddba1a89a49c7657cb",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      },
+      "Operator": {
+        "src": "contracts\\owner\\Operator.sol:8",
+        "version": {
+          "withMetadata": "82b2c3bc468eec9a96b766e16059ec7e616ba90a7a723ff076b3f39a4107b2e9",
+          "withoutMetadata": "10c58f5ec71ecfdb842369da835f9e170ae300c6a4876b61cc51081fe3d20c4a",
+          "linkedWithoutMetadata": "10c58f5ec71ecfdb842369da835f9e170ae300c6a4876b61cc51081fe3d20c4a"
+        },
+        "inherit": [
+          "Ownable",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "()",
+          "operator()",
+          "isOperator()",
+          "transferOperator(address)",
+          "_renounceOperator()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Operator",
+            "src": "contracts\\owner\\Operator.sol:13"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin\\contracts\\access\\Ownable.sol:21"
+            },
+            {
+              "label": "_operator",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "Operator",
+              "src": "contracts\\owner\\Operator.sol:9"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "CataGenPools": {
+        "src": "contracts\\pools\\CataGenPools.sol:12",
+        "version": {
+          "withMetadata": "55038cefb413c5f05f2855a2c9aebf51f2e23c00782967944c989b102b4c1bb2",
+          "withoutMetadata": "8ac1a4e6981fb22463b017d12e28382c14f5c88ccfef044f93d92e8afa412e7c",
+          "linkedWithoutMetadata": "8ac1a4e6981fb22463b017d12e28382c14f5c88ccfef044f93d92e8afa412e7c"
+        },
+        "inherit": [
+          "ReentrancyGuard"
+        ],
+        "libraries": [
+          "SafeMath",
+          "SafeERC20"
+        ],
+        "methods": [
+          "(address,address,uint256)",
+          "add(uint256,address,bool,uint256)",
+          "set(uint256,uint256)",
+          "getGeneratedReward(uint256,uint256)",
+          "pendingCata(uint256,address)",
+          "massUpdatePools()",
+          "deposit(uint256,uint256)",
+          "withdraw(uint256,uint256)",
+          "emergencyWithdraw(uint256)",
+          "setOperator(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "CataGenPools",
+            "src": "contracts\\pools\\CataGenPools.sol:65"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "totalAllocPoint",
+            "src": "contracts\\pools\\CataGenPools.sol:44"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "cataPerSecond",
+            "src": "contracts\\pools\\CataGenPools.sol:55"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "runningTime",
+            "src": "contracts\\pools\\CataGenPools.sol:56"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_status",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "ReentrancyGuard",
+              "src": "@openzeppelin\\contracts\\security\\ReentrancyGuard.sol:37"
+            },
+            {
+              "label": "operator",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "CataGenPools",
+              "src": "contracts\\pools\\CataGenPools.sol:17"
+            },
+            {
+              "label": "cata",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_contract(IERC20)808",
+              "contract": "CataGenPools",
+              "src": "contracts\\pools\\CataGenPools.sol:34"
+            },
+            {
+              "label": "poolInfo",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_array(t_struct(PoolInfo)2481_storage)dyn_storage",
+              "contract": "CataGenPools",
+              "src": "contracts\\pools\\CataGenPools.sol:38"
+            },
+            {
+              "label": "userInfo",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint256,t_mapping(t_address,t_struct(UserInfo)2469_storage))",
+              "contract": "CataGenPools",
+              "src": "contracts\\pools\\CataGenPools.sol:41"
+            },
+            {
+              "label": "totalAllocPoint",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_uint256",
+              "contract": "CataGenPools",
+              "src": "contracts\\pools\\CataGenPools.sol:44"
+            },
+            {
+              "label": "poolStartTime",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_uint256",
+              "contract": "CataGenPools",
+              "src": "contracts\\pools\\CataGenPools.sol:47"
+            },
+            {
+              "label": "poolEndTime",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_uint256",
+              "contract": "CataGenPools",
+              "src": "contracts\\pools\\CataGenPools.sol:50"
+            },
+            {
+              "label": "daoFundAddress",
+              "offset": 0,
+              "slot": "8",
+              "type": "t_address",
+              "contract": "CataGenPools",
+              "src": "contracts\\pools\\CataGenPools.sol:52"
+            },
+            {
+              "label": "cataPerSecond",
+              "offset": 0,
+              "slot": "9",
+              "type": "t_uint256",
+              "contract": "CataGenPools",
+              "src": "contracts\\pools\\CataGenPools.sol:55"
+            },
+            {
+              "label": "runningTime",
+              "offset": 0,
+              "slot": "10",
+              "type": "t_uint256",
+              "contract": "CataGenPools",
+              "src": "contracts\\pools\\CataGenPools.sol:56"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_struct(PoolInfo)2481_storage)dyn_storage": {
+              "label": "struct CataGenPools.PoolInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_contract(IERC20)808": {
+              "label": "contract IERC20",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_struct(UserInfo)2469_storage)": {
+              "label": "mapping(address => struct CataGenPools.UserInfo)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_mapping(t_address,t_struct(UserInfo)2469_storage))": {
+              "label": "mapping(uint256 => mapping(address => struct CataGenPools.UserInfo))",
+              "numberOfBytes": "32"
+            },
+            "t_struct(PoolInfo)2481_storage": {
+              "label": "struct CataGenPools.PoolInfo",
+              "members": [
+                {
+                  "label": "token",
+                  "type": "t_contract(IERC20)808",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "allocPoint",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "lastRewardTime",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "accCataPerShare",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "isStarted",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "4"
+                }
+              ],
+              "numberOfBytes": "160"
+            },
+            "t_struct(UserInfo)2469_storage": {
+              "label": "struct CataGenPools.UserInfo",
+              "members": [
+                {
+                  "label": "amount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "rewardDebt",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                }
+              ],
+              "numberOfBytes": "64"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    }
+  ]
+}
