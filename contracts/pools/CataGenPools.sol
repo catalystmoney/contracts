@@ -52,7 +52,7 @@ contract CataGenPools is ReentrancyGuard {
     address public daoFundAddress;
 
 
-    uint256 public cataPerSecond = 0.159143 ether; // 27500 Cata / (48h * 60min * 60s)
+    uint256 public cataPerSecond = 0.1591435185185185 ether; // 27500 Cata / (48h * 60min * 60s)
     uint256 public runningTime = 48 hours;
     uint256 public constant TOTAL_REWARDS = 27500 ether;
 
@@ -224,7 +224,7 @@ contract CataGenPools is ReentrancyGuard {
         }
         if (_amount > 0) {
             pool.token.safeTransferFrom(_sender, address(this), _amount);
-            uint256 depositDebt = _amount.mul(50).div(10000);
+            uint256 depositDebt = _amount.mul(100).div(10000);
             user.amount = user.amount.add(_amount.sub(depositDebt));
             pool.token.safeTransfer(daoFundAddress, depositDebt);
         }

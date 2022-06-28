@@ -359,9 +359,9 @@ contract Treasury is ContractGuard, Operator {
         require(_daoFund != address(0), "zero");
         require(_daoFundSharedPercent <= 1500, "out of range");
         require(_devFund != address(0), "zero");
-        require(_devFundSharedPercent <= 350, "out of range");
+        require(_devFundSharedPercent <= 450, "out of range");
         require(_teamFund != address(0), "zero");
-        require(_teamFundSharedPercent <= 550, "out of range");
+        require(_teamFundSharedPercent <= 300, "out of range");
 
         daoFund = _daoFund;
         daoFundSharedPercent = _daoFundSharedPercent;

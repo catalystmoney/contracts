@@ -1,0 +1,8 @@
+ npx hardhat run --network Goerli scripts/deploy.js 
+
+ npx hardhat verify --network Goerli contract address
+
+
+ npx hardhat verify --constructor-args arguments.js
+
+ 0xF352329E5211117A058Be82253930FfE7c95EE0C

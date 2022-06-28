@@ -51,9 +51,9 @@ contract LystRewardPool is ReentrancyGuard {
 
     address public daoFundAddress;
 
-    uint256 public lystPerSecond = 0.003486 ether; // 50000 lyst / (166 days * 24h * 60min * 60s)
-    uint256 public runningTime = 166 days; // 166 days
-    uint256 public constant TOTAL_REWARDS = 50000 ether;
+    uint256 public lystPerSecond = 0.0012002743484225 ether; // 28000 lyst / (270 days * 24h * 60min * 60s)
+    uint256 public runningTime = 270 days; // 270 days
+    uint256 public constant TOTAL_REWARDS = 28000 ether;
 
     event Deposit(address indexed user, uint256 indexed pid, uint256 amount);
     event Withdraw(address indexed user, uint256 indexed pid, uint256 amount);
@@ -130,7 +130,7 @@ contract LystRewardPool is ReentrancyGuard {
     // starting allocations for our pools
     // Cata-EMP LP: 21500 Lyst
     // Lyst-EMP LP: 21000 Lyst
-    // TEAM: 4500 Lyst
+    // TEAM: 2520 Lyst
     // Pancake Swap Stables LP: 3000 Lyst
 
     // Update the given pool's Lyst allocation point. Can only be called by the operator.

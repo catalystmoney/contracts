@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ContractGuard",
+  "sourceName": "contracts/utils/ContractGuard.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212205f7011c5d1cd233e7ace5c75f788fe25d322837939247fb446a6c181ae1daa2764736f6c63430008090033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212205f7011c5d1cd233e7ace5c75f788fe25d322837939247fb446a6c181ae1daa2764736f6c63430008090033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

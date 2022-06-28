@@ -19,7 +19,7 @@ contract Lyst is ERC20Burnable, Operator {
     using SafeMath for uint256;
 
     // TOTAL MAX SUPPLY = 50,000 Lyst
-    uint256 public constant FARMING_POOL_REWARD_ALLOCATION = 50000 ether;
+    uint256 public constant FARMING_POOL_REWARD_ALLOCATION = 28000 ether;
 
 
     bool public rewardPoolDistributed = false;
