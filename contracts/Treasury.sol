@@ -71,7 +71,7 @@ contract Treasury is ContractGuard, Operator {
     uint256 public maxSupplyContractionPercent;
     uint256 public maxDebtRatioPercent;
 
-    // 14 first epochs (0.5 week) with 6% expansion regardless of Cata price
+    // 14 first epochs (0.5 week) with 4.5% expansion regardless of Cata price
     uint256 public bootstrapEpochs;
     uint256 public bootstrapSupplyExpansionPercent;
 
@@ -253,22 +253,22 @@ contract Treasury is ContractGuard, Operator {
         cataPriceCeiling = cataPriceOne.mul(101).div(100);
 
         // Dynamic max expansion percent
-        supplyTiers = [0 ether, 206000 ether, 386000 ether, 530000 ether, 1300000 ether, 5000000 ether, 10000000 ether];
-        maxExpansionTiers = [600, 500, 450, 400, 200, 100, 50];
+        supplyTiers = [0 ether, 500000 ether, 1000000 ether, 1500000 ether, 2000000 ether, 5000000 ether, 10000000 ether, 20000000 ether, 50000000 ether];
+        maxExpansionTiers = [450, 400, 350, 300, 250, 200, 150, 125, 100];
 
-        maxSupplyExpansionPercent = 600; // Upto 6% supply for expansion
+        maxSupplyExpansionPercent = 450; // Upto 6% supply for expansion
 
         bondDepletionFloorPercent = 10000; // 100% of Bond supply for depletion floor
         seigniorageExpansionFloorPercent = 3500; // At least 35% of expansion reserved for reactor
         maxSupplyContractionPercent = 300; // Upto 3.0% supply for contraction (to burn cata and mint cBond)
-        maxDebtRatioPercent = 3500; // Upto 35% supply of cBond to purchase
+        maxDebtRatioPercent = 4000; // Upto 35% supply of cBond to purchase
 
         premiumThreshold = 110;
         premiumPercent = 7000;
 
-        // First 14 epochs with 6% expansion
+        // First 14 epochs with 4.5% expansion
         bootstrapEpochs = 14;
-        bootstrapSupplyExpansionPercent = 600;
+        bootstrapSupplyExpansionPercent = 450;
 
         // set seigniorageSaved to it's balance
         seigniorageSaved = IERC20(cata).balanceOf(address(this));
