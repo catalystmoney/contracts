@@ -2,9 +2,9 @@ const { ethers } = require("hardhat");
 
 async function main() {
   // Deploying
-  const contract = await ethers.getContractFactory('DummyBUSD');
+  const contract = await ethers.getContractFactory('CBond');
   const instance = await contract.deploy();
-  //const instance = await contract.deploy('0x0a768658eF5a82D7123aa7678345cbef39a157AB', '21600', '1656585900');
+  //const instance = await contract.deploy('0xCd538bE39Faa602F50c07B48646013E97062bCb9', '21600', '1656793800');
   await instance.deployed();
   console.log(instance.address);
 

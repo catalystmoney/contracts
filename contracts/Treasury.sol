@@ -71,7 +71,7 @@ contract Treasury is ContractGuard, Operator {
     uint256 public maxSupplyContractionPercent;
     uint256 public maxDebtRatioPercent;
 
-    // 14 first epochs (0.5 week) with 4.5% expansion regardless of Cata price
+    // 14 first epochs (0.5 week) with 6% expansion regardless of Cata price
     uint256 public bootstrapEpochs;
     uint256 public bootstrapSupplyExpansionPercent;
 
@@ -91,8 +91,6 @@ contract Treasury is ContractGuard, Operator {
 
     address public devFund;
     uint256 public devFundSharedPercent;
-    address public teamFund;
-    uint256 public teamFundSharedPercent;
 
     /* =================== Events =================== */
 
@@ -352,23 +350,18 @@ contract Treasury is ContractGuard, Operator {
         address _daoFund,
         uint256 _daoFundSharedPercent,
         address _devFund,
-        uint256 _devFundSharedPercent,
-        address _teamFund,
-        uint256 _teamFundSharedPercent
+        uint256 _devFundSharedPercent
     ) external onlyOperator {
         require(_daoFund != address(0), "zero");
-        require(_daoFundSharedPercent <= 1500, "out of range");
+        require(_daoFundSharedPercent <= 2500, "out of range");
         require(_devFund != address(0), "zero");
-        require(_devFundSharedPercent <= 450, "out of range");
-        require(_teamFund != address(0), "zero");
-        require(_teamFundSharedPercent <= 300, "out of range");
+        require(_devFundSharedPercent <= 1000, "out of range");
+
 
         daoFund = _daoFund;
         daoFundSharedPercent = _daoFundSharedPercent;
         devFund = _devFund;
         devFundSharedPercent = _devFundSharedPercent;
-        teamFund = _teamFund;
-        teamFundSharedPercent = _teamFundSharedPercent;
     }
 
     function setMaxDiscountRate(uint256 _maxDiscountRate) external onlyOperator {
@@ -490,14 +483,8 @@ contract Treasury is ContractGuard, Operator {
             emit DevFundFunded(block.timestamp, _devFundSharedAmount);
         }
 
-        uint256 _teamFundSharedAmount = 0;
-        if (teamFundSharedPercent > 0) {
-            _teamFundSharedAmount = _amount.mul(teamFundSharedPercent).div(10000);
-            IERC20(cata).transfer(teamFund, _teamFundSharedAmount);
-            emit TeamFundFunded(block.timestamp, _teamFundSharedAmount);
-        }
 
-        _amount = _amount.sub(_daoFundSharedAmount).sub(_devFundSharedAmount).sub(_teamFundSharedAmount);
+        _amount = _amount.sub(_daoFundSharedAmount).sub(_devFundSharedAmount);
 
         IERC20(cata).safeApprove(reactor, 0);
         IERC20(cata).safeApprove(reactor, _amount);

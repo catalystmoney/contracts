@@ -128,26 +128,28 @@ contract LystRewardPool is ReentrancyGuard {
     }
 
     // starting allocations for our pools
-    // Cata-EMP LP And Lyst-BNB LP: 25200 Lyst
+    // Cata-EMP LP And Lyst-BNB LP: 23700 Lyst
     // TEAM: 2800 Lyst 
+    //Treasury: 1500 Lyst
+
 
     // Update the given pool's Lyst allocation point. Can only be called by the operator.
     // @allocPoints for TEAM can NOT be altered after added - PID 1 and 2
-    // @allocPoints for main LP pools can NOT be smaller than 19000
+    // @allocPoints for main LP pools can NOT be smaller than 18000
     function set(uint256 _pid, uint256 _allocPoint, uint256 _depFee) public onlyOperator {
         massUpdatePools();
-        require (_pid != 1, "CAN NOT ADJUST TEAM ALLOCATIONS");
+        require (_pid != 2, "CAN NOT ADJUST TEAM ALLOCATIONS");
 
         PoolInfo storage pool = poolInfo[_pid];
 
-        if (_pid == 0) {
-            require(_allocPoint >= 19000 * 10**18, "out of range"); // >= allocations for lp pools cant be less than 20,000
+        if (_pid == 0 || _pid == 1) {
+            require(_allocPoint >= 9000 * 10**18, "out of range"); // >= allocations for lp pools cant be less than 9000
             if (pool.isStarted) {
                 totalAllocPoint = totalAllocPoint.sub(pool.allocPoint).add(_allocPoint);
             }
             //for stables or extra pools
-        } else if (_pid > 1) {
-            require(_allocPoint < 19000 * 10**18, "cant be more then native lps");
+        } else if (_pid > 2) {
+            require(_allocPoint < 9000 * 10**18, "cant be more then native lps");
             require(_depFee < 200);  // deposit fee cant be more than 2%;
             pool.depFee = _depFee;
 
@@ -156,8 +158,6 @@ contract LystRewardPool is ReentrancyGuard {
             }
 
         }
-        //Protects against over alloc
-        require(totalAllocPoint <= TOTAL_REWARDS, "INCORRECT ALLOCS");
         pool.allocPoint = _allocPoint;
     }
 

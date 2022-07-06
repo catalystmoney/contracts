@@ -18,7 +18,7 @@ _________         __           ___________.__
 contract Lyst is ERC20Burnable, Operator {
     using SafeMath for uint256;
 
-    // TOTAL MAX SUPPLY = 50,000 Lyst
+    // TOTAL MAX SUPPLY = 28000 Lyst
     uint256 public constant FARMING_POOL_REWARD_ALLOCATION = 28000 ether;
 
 
@@ -27,7 +27,7 @@ contract Lyst is ERC20Burnable, Operator {
     constructor(
 
     ) ERC20("LYST", "LYST") {
-        _mint(msg.sender, 10 ether); // mint 10 Lyst for initial pools deployment
+        _mint(msg.sender, 1 ether); // mint 10 Lyst for initial pools deployment
     }
     /**
      * @notice distribute to reward pool (only once)
