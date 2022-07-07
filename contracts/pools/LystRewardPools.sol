@@ -148,7 +148,7 @@ contract LystRewardPool is ReentrancyGuard {
                 totalAllocPoint = totalAllocPoint.sub(pool.allocPoint).add(_allocPoint);
             }
             //for stables or extra pools
-        } else if (_pid > 2) {
+        } else if (_pid > 3) {
             require(_allocPoint < 9000 * 10**18, "cant be more then native lps");
             require(_depFee < 200);  // deposit fee cant be more than 2%;
             pool.depFee = _depFee;

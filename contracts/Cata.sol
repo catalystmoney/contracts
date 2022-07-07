@@ -40,9 +40,9 @@ contract Cata is ERC20Burnable, Operator {
      * @notice Constructs the CATA ERC-20 contract.
      */
     constructor() ERC20("CATA", "CATA") {
-        // Mints 5000 CATA to contract creator for initial pool setup
+        // Mints 2500 CATA to contract creator for initial pool setup
 
-        _mint(msg.sender, 5000 ether);
+        _mint(msg.sender, 2500 ether);
 
     }
 

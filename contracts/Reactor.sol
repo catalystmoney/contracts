@@ -128,8 +128,8 @@ contract Reactor is LystWrapper, ContractGuard, Operator {
         ReactorSnapshot memory genesisSnapshot = ReactorSnapshot({time : block.number, rewardReceived : 0, rewardPerShare : 0});
         reactorHistory.push(genesisSnapshot);
 
-        withdrawLockupEpochs = 6; // Lock for 4 epochs (24h) before release withdraw
-        rewardLockupEpochs = 3; // Lock for 2 epochs (12h) before release claimReward
+        withdrawLockupEpochs = 6; // Lock for 6 epochs (36h) before release withdraw
+        rewardLockupEpochs = 3; // Lock for 3 epochs (18h) before release claimReward
 
         initialized = true;
         emit Initialized(msg.sender, block.number);
